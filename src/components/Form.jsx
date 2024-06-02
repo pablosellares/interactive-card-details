@@ -12,14 +12,29 @@ const Form = ({
   setCardExpiresYear,
   setCardCvc,
 }) => {
-  const [cardNameValue, setCardNameValue] = useState("");
-
   const handleCardName = (e) => {
     setCardName(e.target.value);
   };
 
   const handleCardNumber = (e) => {
     setCardNumber(e.target.value);
+    const inputVal = e.target.value.replace(/ /g, ""); //remove all the empty spaces in the input
+    let inputNumbersOnly = inputVal.replace(/\D/g, ""); // Get only digits
+
+    if (inputNumbersOnly.length > 16) {
+      //If entered value has a length greater than 16 then take only the first 16 digits
+      inputNumbersOnly = inputNumbersOnly.substr(0, 16);
+    }
+
+    // Get nd array of 4 digits per an element EX: ["4242", "4242", ...]
+    const splits = inputNumbersOnly.match(/.{1,4}/g);
+
+    let spacedNumber = "";
+    if (splits) {
+      spacedNumber = splits.join(" "); // Join all the splits with an empty space
+    }
+
+    setCardNumber(spacedNumber); // Set the new CC number
   };
 
   const handleCardExpiresMonth = (e) => {
@@ -53,9 +68,9 @@ const Form = ({
           name="card-number"
           id="card-number"
           inputMode="numeric"
-          pattern="[0-9\s]{13,19}"
+          // pattern="[0-9\s]{13,19}"
           autoComplete="cc-number"
-          maxLength="16"
+          maxLength="19"
           placeholder="xxxx xxxx xxxx xxxx"
           onChange={handleCardNumber}
           value={cardNumber}
@@ -68,8 +83,10 @@ const Form = ({
               type="tel"
               name="card-expires-month"
               id="card-expires-month"
+              inputMode="numeric"
               // pattern="([0-9]|[0-9])"
               autoComplete="cc-expires-month"
+              maxLength="2"
               onChange={handleCardExpiresMonth}
               value={cardExpiresMonth}
               required
@@ -81,8 +98,10 @@ const Form = ({
               type="tel"
               name="card-expires-year"
               id="card-expires-year"
+              inputMode="numeric"
               // pattern="([0-9]|[0-9])"
               autoComplete="cc-expires-year"
+              maxLength="2"
               onChange={handleCardExpiresYear}
               value={cardExpiresYear}
               required
@@ -91,12 +110,12 @@ const Form = ({
         </div>
         <label htmlFor="card-cvc">CVC</label>
         <input
-          type="number"
+          type="tel"
           name="card-cvc"
           id="card-cvc"
           inputMode="numeric"
-          maxLength={3}
-          pattern="([0-9]|[0-9]|[0-9])"
+          maxLength="3"
+          // pattern="([0-9]|[0-9]|[0-9])"
           autoComplete="cc-cvc"
           onChange={handleCardCvc}
           value={cardCvc}
