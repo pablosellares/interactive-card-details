@@ -1,0 +1,36 @@
+// Colors
+
+// Colors: Primary
+
+$gradient: linear-gradient(hsl(249, 99%, 64%) to hsl(278, 94%, 30%));
+$red: hsl(0, 100%, 66%);
+
+// Colors: Neutral
+
+$white: hsl(0, 0%, 100%);
+$darkGrayishViolet: hsl(279, 6%, 55%);
+$veryDarkViolet: hsl(278, 68%, 11%);
+
+// Bg Images
+$desktopBg: url("../../assets/bg-main-desktop.png");
+$mobileBg: url("../../assets/bg-main-mobile.png");
+
+body {
+  background: $desktopBg left no-repeat;
+  background-size: contain;
+  height: 100vh;
+
+  @include mobile {
+    background: $mobileBg center top no-repeat;
+    background-size: contain;
+  }
+
+  .container {
+    display: flex;
+    height: 100vh;
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+}

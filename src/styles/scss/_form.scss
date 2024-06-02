@@ -1,0 +1,33 @@
+.form {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 50%;
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="number"] {
+      border: 1px solid $veryDarkViolet;
+      border-radius: 8px;
+      padding: 8px;
+      margin-bottom: 8px;
+    }
+
+    label {
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      color: $veryDarkViolet;
+    }
+
+    button[type="submit"] {
+      background-color: $veryDarkViolet;
+      border-radius: 8px;
+      color: $white;
+      padding: 16px;
+    }
+  }
+}
