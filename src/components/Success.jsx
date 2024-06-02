@@ -1,7 +1,7 @@
 import React from "react";
 
 const Success = () => {
-  return <div>Success</div>;
+  return <section className="success">Success</section>;
 };
 
 export default Success;

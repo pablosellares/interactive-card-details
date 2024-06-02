@@ -4,11 +4,12 @@ const Form = ({
   cardExpiresMonth,
   cardExpiresYear,
   cardCvc,
-  setCardNumber,
   setCardName,
+  setCardNumber,
   setCardExpiresMonth,
   setCardExpiresYear,
   setCardCvc,
+  setIsSubmitted,
 }) => {
   const handleCardName = (e) => {
     setCardName(e.target.value);
@@ -47,9 +48,19 @@ const Form = ({
     setCardCvc(e.target.value);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsSubmitted(true);
+    setCardCvc("");
+    setCardName("");
+    setCardNumber("");
+    setCardExpiresMonth("");
+    setCardExpiresYear("");
+  };
+
   return (
     <section className="form">
-      <form>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="card-name">Cardholder Name</label>
         <input
           autoComplete="cc-name"
@@ -115,7 +126,7 @@ const Form = ({
               id="card-cvc"
               inputMode="numeric"
               maxLength="3"
-              pattern="([0-9]|[0-9]|[0-9])"
+              // pattern="([0-9]|[0-9]|[0-9])"
               autoComplete="cc-cvc"
               onChange={handleCardCvc}
               value={cardCvc}

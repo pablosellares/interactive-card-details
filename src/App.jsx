@@ -36,6 +36,7 @@ const App = () => {
             setCardExpiresMonth={setCardExpiresMonth}
             setCardExpiresYear={setCardExpiresYear}
             setCardCvc={setCardCvc}
+            setIsSubmitted={setIsSubmitted}
           />
         )}
       </div>
