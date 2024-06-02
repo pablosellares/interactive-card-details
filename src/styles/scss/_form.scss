@@ -27,7 +27,32 @@
       background-color: $veryDarkViolet;
       border-radius: 8px;
       color: $white;
+      cursor: pointer;
       padding: 16px;
+    }
+
+    .input-group {
+      display: flex;
+
+      &__expires {
+        display: flex;
+        width: 50%;
+
+        .month,
+        .year {
+          display: flex;
+          flex-direction: column;
+
+          input {
+            width: 50%;
+          }
+        }
+      }
+
+      .cvc {
+        display: flex;
+        flex-direction: column;
+      }
     }
   }
 }

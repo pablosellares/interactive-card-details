@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 const Form = ({
   cardNumber,
   cardName,
@@ -68,7 +66,7 @@ const Form = ({
           name="card-number"
           id="card-number"
           inputMode="numeric"
-          // pattern="[0-9\s]{13,19}"
+          pattern="[0-9\s]{13,19}"
           autoComplete="cc-number"
           maxLength="19"
           placeholder="xxxx xxxx xxxx xxxx"
@@ -77,50 +75,55 @@ const Form = ({
           required
         />
         <div className="input-group">
-          <div className="month">
-            <label htmlFor="card-expires-month">MM</label>
-            <input
-              type="tel"
-              name="card-expires-month"
-              id="card-expires-month"
-              inputMode="numeric"
-              // pattern="([0-9]|[0-9])"
-              autoComplete="cc-expires-month"
-              maxLength="2"
-              onChange={handleCardExpiresMonth}
-              value={cardExpiresMonth}
-              required
-            />
+          <div className="input-group__expires">
+            <div className="month">
+              <label htmlFor="card-expires-month">MM</label>
+              <input
+                type="tel"
+                name="card-expires-month"
+                id="card-expires-month"
+                inputMode="numeric"
+                pattern="^[0-9]{1,12}"
+                autoComplete="cc-expires-month"
+                maxLength="2"
+                onChange={handleCardExpiresMonth}
+                value={cardExpiresMonth}
+                required
+              />
+            </div>
+            <div className="year">
+              <label htmlFor="card-expires-year">YY</label>
+              <input
+                type="tel"
+                name="card-expires-year"
+                id="card-expires-year"
+                inputMode="numeric"
+                // pattern="([0-9]|[0-9])"
+                autoComplete="cc-expires-year"
+                maxLength="2"
+                onChange={handleCardExpiresYear}
+                value={cardExpiresYear}
+                required
+              />
+            </div>
           </div>
-          <div className="year">
-            <label htmlFor="card-expires-year">YY</label>
+          <div className="cvc">
+            <label htmlFor="card-cvc">CVC</label>
             <input
               type="tel"
-              name="card-expires-year"
-              id="card-expires-year"
+              name="card-cvc"
+              id="card-cvc"
               inputMode="numeric"
-              // pattern="([0-9]|[0-9])"
-              autoComplete="cc-expires-year"
-              maxLength="2"
-              onChange={handleCardExpiresYear}
-              value={cardExpiresYear}
+              maxLength="3"
+              pattern="([0-9]|[0-9]|[0-9])"
+              autoComplete="cc-cvc"
+              onChange={handleCardCvc}
+              value={cardCvc}
               required
             />
           </div>
         </div>
-        <label htmlFor="card-cvc">CVC</label>
-        <input
-          type="tel"
-          name="card-cvc"
-          id="card-cvc"
-          inputMode="numeric"
-          maxLength="3"
-          // pattern="([0-9]|[0-9]|[0-9])"
-          autoComplete="cc-cvc"
-          onChange={handleCardCvc}
-          value={cardCvc}
-          required
-        />
+
         <button type="submit">Confirm</button>
       </form>
     </section>
