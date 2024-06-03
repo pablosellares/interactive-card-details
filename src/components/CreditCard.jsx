@@ -17,6 +17,7 @@ const CreditCard = ({
           <span className="card-front_expires">{cardCvc}</span>
         </div>
       </div>
+
       <div className="card-front_wrapper">
         <img src={cardFrontImg} alt="" />
         <div className="card-front">
@@ -25,7 +26,8 @@ const CreditCard = ({
           <span className="card-front_name">{cardName}</span>
           <div className="card-expire-date">
             <span className="card-front_expires-month">{cardExpiresMonth}</span>
-            <span>/</span>
+            {cardExpiresMonth ? <span>/</span> : ""}
+
             <span className="card-front_expires-year">{cardExpiresYear}</span>
           </div>
         </div>
