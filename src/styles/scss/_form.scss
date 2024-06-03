@@ -17,6 +17,11 @@
       width: 100%;
     }
 
+    .error {
+      color: $red;
+      font-size: 10px;
+    }
+
     input[type="text"],
     input[type="tel"],
     input[type="number"] {
@@ -26,7 +31,7 @@
       font-size: 13px;
       height: 45px;
       padding: 16px;
-      margin-bottom: 29px;
+      margin-bottom: 12px;
 
       &:focus {
         outline: none;
@@ -41,6 +46,7 @@
     label {
       font-size: 10px;
       margin-bottom: 12px;
+      margin-top: 12px;
       text-transform: uppercase;
       color: $veryDarkViolet;
     }
@@ -52,6 +58,7 @@
       cursor: pointer;
       height: 53px;
       padding: 16px;
+      margin-top: 24px;
     }
 
     .input-group {
