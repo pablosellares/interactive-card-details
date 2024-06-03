@@ -15,7 +15,7 @@ const CreditCard = ({
       <div className="card-back_wrapper">
         <img src={cardBackImg} alt="" />
         <div className="card-back">
-          <span className="card-front_expires">{cardCvc}</span>
+          <span className="card-cvc">{cardCvc}</span>
         </div>
       </div>
 

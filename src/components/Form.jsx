@@ -80,7 +80,7 @@ const Form = ({
           // onFocus={() => setCardName("")}
           onChange={handleCardName}
           pattern="[a-zA-Z\s]*"
-          placeholder="Jane Doe"
+          placeholder="Felicia Leire"
           inputMode="text"
           // onInput={handleInputChange}
           value={cardName}
@@ -115,7 +115,7 @@ const Form = ({
                 maxLength="2"
                 onChange={handleCardExpiresMonth}
                 // onInput={handleInputChange}
-                placeholder="01"
+                placeholder="MM"
                 value={cardExpiresMonth}
                 required
               />
@@ -131,7 +131,7 @@ const Form = ({
                 autoComplete="cc-expires-year"
                 maxLength="2"
                 onChange={handleCardExpiresYear}
-                placeholder="01"
+                placeholder="YY"
                 value={cardExpiresYear}
                 required
               />
@@ -148,7 +148,7 @@ const Form = ({
               pattern="[0-9\s]{3,4}"
               autoComplete="cc-cvc"
               onChange={handleCardCvc}
-              placeholder="012"
+              placeholder="e.g. 123"
               value={cardCvc}
               required
             />
