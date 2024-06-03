@@ -30,7 +30,10 @@ body {
     height: 100vh;
 
     @include mobile {
+      align-items: center;
       flex-direction: column;
+      justify-content: space-around;
+      padding: 20px;
     }
   }
 }

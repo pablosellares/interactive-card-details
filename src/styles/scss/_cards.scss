@@ -3,6 +3,11 @@
   display: block;
   position: relative;
 
+  @include mobile {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
   .card-front_wrapper {
     position: absolute;
     left: 50%;

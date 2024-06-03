@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const Form = ({
   cardNumber,
   cardName,
@@ -157,6 +159,20 @@ const Form = ({
       </form>
     </section>
   );
+};
+
+Form.propTypes = {
+  cardNumber: PropTypes.string,
+  cardName: PropTypes.string,
+  cardExpiresMonth: PropTypes.string,
+  cardExpiresYear: PropTypes.string,
+  cardCvc: PropTypes.string,
+  setCardName: PropTypes.func,
+  setCardNumber: PropTypes.func,
+  setCardExpiresMonth: PropTypes.func,
+  setCardExpiresYear: PropTypes.func,
+  setCardCvc: PropTypes.func,
+  setIsSubmitted: PropTypes.func,
 };
 
 export default Form;

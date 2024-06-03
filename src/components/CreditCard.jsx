@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import cardBackImg from "../assets/bg-card-back.png";
 import cardFrontImg from "../assets/bg-card-front.png";
 import cardLogoImg from "../assets/card-logo.svg";
@@ -34,6 +35,14 @@ const CreditCard = ({
       </div>
     </section>
   );
+};
+
+CreditCard.propTypes = {
+  cardNumber: PropTypes.string,
+  cardName: PropTypes.string,
+  cardExpiresMonth: PropTypes.string,
+  cardExpiresYear: PropTypes.string,
+  cardCvc: PropTypes.string,
 };
 
 export default CreditCard;
