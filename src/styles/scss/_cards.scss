@@ -6,6 +6,8 @@
   @include mobile {
     display: flex;
     flex-direction: column-reverse;
+    width: 100%;
+    height: 40dvh;
   }
 
   .card-front_wrapper {
@@ -14,8 +16,15 @@
     top: 15%;
     transform: translateX(-50%);
 
-    img {
-      width: auto;
+    @include mobile {
+      width: 100%;
+      top: 50%;
+      left: 0;
+      transform: translateX(0);
+
+      img {
+        width: 100%;
+      }
     }
 
     .card-front {
@@ -27,6 +36,10 @@
         position: absolute;
         top: 24px;
         left: 24px;
+
+        @include mobile {
+          width: 20%;
+        }
       }
 
       .card-front_number {
@@ -60,8 +73,17 @@
     bottom: 15%;
     transform: translateX(-50%);
 
-    img {
-      width: auto;
+    @include mobile {
+      left: auto;
+      bottom: auto;
+      top: 5%;
+      right: 5%;
+      transform: translateX(0);
+      width: 90%;
+
+      img {
+        width: 100%;
+      }
     }
 
     .card-back {
